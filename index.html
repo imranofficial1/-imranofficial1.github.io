@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohammed Imran - AI & Robotics Expert</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- ScrollReveal -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    
+    <!-- Typed.js -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+    <!-- Google Translate -->
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <!-- Custom Styles -->
+    <style>
+        :root {
+            --primary: #00f2fe;
+            --secondary: #4facfe;
+            --dark: #0a0a0a;
+            --light: #f5f5f5;
+        }
+
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background-color: var(--dark);
+            color: var(--light);
+        }
+
+        .gradient-text {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .gradient-border {
+            position: relative;
+            background: var(--dark);
+            border-radius: 0.5rem;
+        }
+
+        .gradient-border::before {
+            content: "";
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            border-radius: 0.6rem;
+            z-index: -1;
+        }
+
+            .project-card {
+                transition: all 0.3s ease;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .project-card:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 10px 30px -15px rgba(0, 242, 254, 0.2);
+            }
+
+            .project-card::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(45deg, var(--primary), var(--secondary));
+                opacity: 0;
+                transition: opacity 0.3s ease;
+                z-index: -1;
+            }
+
+            .project-card:hover::after {
+                opacity: 0.1;
+            }
+
+        /* Enhanced Animations */
+        @keyframes gradient-flow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .gradient-text {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            background-size: 200% 200%;
+            animation: gradient-flow 5s ease infinite;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .gradient-border::before {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            background-size: 200% 200%;
+            animation: gradient-flow 5s ease infinite;
+        }
+
+        .project-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px -15px rgba(0, 242, 254, 0.2);
+        }
+
+        .project-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: -1;
+        }
+
+        .project-card:hover::after {
+            opacity: 0.15;
+        }
+
+        .float-animation {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        /* Theme Modes */
+        .dark-mode {
+            background-color: var(--light);
+            color: var(--dark);
+        }
+
+        .dark-mode .gradient-border {
+            background: var(--light);
+        }
+
+        .dark-mode .bg-black\/80 {
+            background-color: rgba(245, 245, 245, 0.8);
+        }
+
+        .dark-mode .text-gray-400 {
+            color: rgba(10, 10, 10, 0.6);
+        }
+
+        /* Google Translate Styling */
+        .goog-te-gadget {
+            font-family: 'Space Grotesk', sans-serif !important;
+            color: var(--light) !important;
+        }
+        
+        .goog-te-gadget-simple {
+            background-color: rgba(0, 242, 254, 0.1) !important;
+            border: 1px solid var(--primary) !important;
+            border-radius: 8px !important;
+            padding: 6px 12px !important;
+            color: var(--light) !important;
+            transition: all 0.3s ease !important;
+        }
+        
+        .goog-te-gadget-simple:hover {
+            background-color: rgba(0, 242, 254, 0.2) !important;
+            transform: translateY(-2px) !important;
+        }
+        
+        .goog-te-gadget-simple .goog-te-menu-value {
+            color: var(--light) !important;
+            font-size: 14px !important;
+        }
+        
+        .goog-te-gadget-simple .goog-te-menu-value:hover {
+            color: var(--primary) !important;
+        }
+        
+        .goog-te-gadget-simple img {
+            display: none !important;
+        }
+        
+        .goog-te-banner-frame {
+            display: none !important;
+        }
+        
+        body {
+            top: 0 !important;
+        }
+
+        /* Mobile Menu Animations */
+        #mobile-menu {
+            transition: all 0.3s ease-in-out;
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+
+        #mobile-menu.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-black/80 backdrop-blur-sm">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <a href="#" class="text-2xl font-bold gradient-text">MI.</a>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="hover:text-cyan-400 transition-colors">Home</a>
+                    <a href="#about" class="hover:text-cyan-400 transition-colors">About</a>
+                    <a href="#projects" class="hover:text-cyan-400 transition-colors">Projects</a>
+                    <a href="#certifications" class="hover:text-cyan-400 transition-colors">Certifications</a>
+                    <a href="#contact" class="hover:text-cyan-400 transition-colors">Contact</a>
+                </div>
+
+                <div class="flex items-center space-x-4">
+                    <!-- Language Selector -->
+                    <div id="google_translate_element" class="mr-2"></div>
+                    
+                    <!-- Theme Toggle -->
+                    <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-800 transition-colors">
+                        <i class="fas fa-moon"></i>
+                    </button>
+
+                    <!-- Mobile Menu Button -->
+                    <button id="mobile-menu-button" class="md:hidden p-2 rounded-full hover:bg-gray-800 transition-colors">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+                <div class="flex flex-col space-y-4">
+                    <a href="#home" class="hover:text-cyan-400 transition-colors">Home</a>
+                    <a href="#about" class="hover:text-cyan-400 transition-colors">About</a>
+                    <a href="#projects" class="hover:text-cyan-400 transition-colors">Projects</a>
+                    <a href="#certifications" class="hover:text-cyan-400 transition-colors">Certifications</a>
+                    <a href="#contact" class="hover:text-cyan-400 transition-colors">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center relative overflow-hidden">
+        <div class="container mx-auto px-4 py-20">
+            <div class="max-w-3xl">
+                <h1 class="text-5xl md:text-7xl font-bold mb-4 float-animation">
+                    Hi, I'm <span class="gradient-text">Mohammed Imran</span>
+                </h1>
+                <div class="text-2xl md:text-3xl mb-8">
+                    I'm a <span id="typed-text"></span>
+                </div>
+                <p class="text-gray-400 text-lg mb-8">
+                    Transforming ideas into intelligent solutions through AI & Robotics
+                </p>
+                <a href="#contact" class="gradient-border inline-block px-8 py-3 text-lg font-semibold hover:opacity-90 transition-opacity">
+                    Get in Touch
+                </a>
+            </div>
+        </div>
+        <div class="absolute top-0 right-0 w-full h-full -z-10">
+            <div class="absolute top-0 right-0 w-full h-full bg-gradient-to-br from-blue-500/10 to-cyan-500/10"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold mb-12 text-center">About Me</h2>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="relative transform hover:scale-105 transition-transform duration-500 float-animation">
+                        <div class="gradient-border w-full aspect-square">
+                            <img src="assets/images/profile.jpg" alt="Mohammed Imran" class="w-full h-full object-cover rounded-lg">
+                        </div>
+                    </div>
+                <div>
+                    <h3 class="text-2xl font-semibold mb-4">AI & Data Science Developer</h3>
+                    <p class="text-gray-400 mb-6">
+                        Being an AI student, I've worked with various programming languages and completed multiple projects in areas like machine learning and deep learning. These projects have helped me gain practical skills by applying what I've learned to real-life problems, which has made me more confident in my abilities. I'm always looking to improve and learn more, and I enjoy finding new ways to use AI and programming to create useful solutions.
+                    </p>
+
+                    <!-- Technical Skills -->
+                    <h4 class="text-xl font-semibold mb-4">Technical Skills</h4>
+                    <div class="flex flex-wrap gap-3 mb-8">
+                        <span class="gradient-border px-4 py-2">Python</span>
+                        <span class="gradient-border px-4 py-2">C/C++</span>
+                        <span class="gradient-border px-4 py-2">Java</span>
+                        <span class="gradient-border px-4 py-2">JavaScript</span>
+                        <span class="gradient-border px-4 py-2">React JS</span>
+                        <span class="gradient-border px-4 py-2">HTML/CSS</span>
+                        <span class="gradient-border px-4 py-2">Deep Learning</span>
+                        <span class="gradient-border px-4 py-2">NLP</span>
+                        <span class="gradient-border px-4 py-2">SQL</span>
+                    </div>
+
+                    <!-- Education -->
+                    <h4 class="text-xl font-semibold mb-4">Education</h4>
+                    <div class="space-y-4 mb-8">
+                        <div>
+                            <h5 class="font-semibold text-cyan-400">B.Tech in AI & Data Science</h5>
+                            <p class="text-gray-400">Chettinad College Of Engineering And Technology</p>
+                            <p class="text-gray-500">Expected Graduation: 2026</p>
+                        </div>
+                        <div>
+                            <h5 class="font-semibold text-cyan-400">H.S.C</h5>
+                            <p class="text-gray-400">Crescent Matric Higher Secondary School</p>
+                            <p class="text-gray-500">2022</p>
+                        </div>
+                        <div>
+                            <h5 class="font-semibold text-cyan-400">S.S.L.C</h5>
+                            <p class="text-gray-400">Arumugam Academy Matric Higher Secondary School</p>
+                            <p class="text-gray-500">2020</p>
+                        </div>
+                    </div>
+
+                    <!-- Languages -->
+                    <h4 class="text-xl font-semibold mb-4">Languages</h4>
+                    <div class="flex flex-wrap gap-3 mb-8">
+                        <span class="gradient-border px-4 py-2">Tamil (Native)</span>
+                        <span class="gradient-border px-4 py-2">English (C1)</span>
+                        <span class="gradient-border px-4 py-2">Hindi (C1)</span>
+                        <span class="gradient-border px-4 py-2">Urdu (B2)</span>
+                        <span class="gradient-border px-4 py-2">Arabic</span>
+                    </div>
+
+                    <!-- Contact Information -->
+                    <h4 class="text-xl font-semibold mb-4">Contact Information</h4>
+                    <div class="grid grid-cols-2 gap-4 text-gray-400">
+                        <div>
+                            <p><span class="text-cyan-400">Location:</span> Karur, India</p>
+                            <p><span class="text-cyan-400">Email:</span> aimdimran1@gmail.com</p>
+                            <p><span class="text-cyan-400">Phone:</span> +91 9150564749</p>
+                        </div>
+                        <div>
+                            <p><span class="text-cyan-400">Age:</span> 20</p>
+                            <p><span class="text-cyan-400">DOB:</span> 22/12/2004</p>
+                            <p><span class="text-cyan-400">Nationality:</span> Indian</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-black/30">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold mb-12 text-center">Featured Projects</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" data-scroll-reveal="projects-grid">
+                <!-- Smart India Hackathon Projects -->
+                <div class="project-card gradient-border p-6">
+                    <h3 class="text-xl font-semibold mb-4">SIH - Dynamic Route Rationalization</h3>
+                    <p class="text-gray-400 mb-4">Smart India Hackathon project for optimizing travel routes.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-sm text-cyan-400">#AI</span>
+                        <span class="text-sm text-cyan-400">#Innovation</span>
+                    </div>
+                </div>
+
+                <div class="project-card gradient-border p-6">
+                    <h3 class="text-xl font-semibold mb-4">SIH - Travel & Tourism Platform</h3>
+                    <p class="text-gray-400 mb-4">Comprehensive travel and tourism website solution.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-sm text-cyan-400">#WebDev</span>
+                        <span class="text-sm text-cyan-400">#Tourism</span>
+                    </div>
+                </div>
+
+                <div class="project-card gradient-border p-6">
+                    <h3 class="text-xl font-semibold mb-4">SIH - Reboot Medical Helper</h3>
+                    <p class="text-gray-400 mb-4">Medical patient assistance system (56% Complete).</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-sm text-cyan-400">#Healthcare</span>
+                        <span class="text-sm text-cyan-400">#AI</span>
+                    </div>
+                </div>
+
+                <!-- AI & ML Projects -->
+                <div class="project-card gradient-border p-6">
+                    <h3 class="text-xl font-semibold mb-4">Stock Market Prediction</h3>
+                    <p class="text-gray-400 mb-4">ML-powered market analysis and prediction system.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-sm text-cyan-400">#ML</span>
+                        <span class="text-sm text-cyan-400">#Finance</span>
+                    </div>
+                </div>
+
+                <div class="project-card gradient-border p-6">
+                    <h3 class="text-xl font-semibold mb-4">AI Personal Assistant</h3>
+                    <p class="text-gray-400 mb-4">Intelligent system assistant with voice capabilities.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-sm text-cyan-400">#AI</span>
+                        <span class="text-sm text-cyan-400">#Python</span>
+                    </div>
+                </div>
+
+                <div class="project-card gradient-border p-6">
+                    <h3 class="text-xl font-semibold mb-4">Face Recognition System</h3>
+                    <p class="text-gray-400 mb-4">Advanced facial recognition using deep learning.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-sm text-cyan-400">#ComputerVision</span>
+                        <span class="text-sm text-cyan-400">#AI</span>
+                    </div>
+                </div>
+
+                <!-- Web Development Projects -->
+                <div class="project-card gradient-border p-6">
+                    <h3 class="text-xl font-semibold mb-4">CCET Bus Tracking</h3>
+                    <p class="text-gray-400 mb-4">Real-time bus tracking system for CCET.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-sm text-cyan-400">#WebDev</span>
+                        <span class="text-sm text-cyan-400">#GPS</span>
+                    </div>
+                </div>
+
+                <div class="project-card gradient-border p-6">
+                    <h3 class="text-xl font-semibold mb-4">E-commerce Platform</h3>
+                    <p class="text-gray-400 mb-4">Full-featured online shopping platform using React JS.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-sm text-cyan-400">#React</span>
+                        <span class="text-sm text-cyan-400">#Ecommerce</span>
+                    </div>
+                </div>
+
+                <div class="project-card gradient-border p-6">
+                    <h3 class="text-xl font-semibold mb-4">Price Comparison System</h3>
+                    <p class="text-gray-400 mb-4">Online shopping price comparison tool.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-sm text-cyan-400">#Python</span>
+                        <span class="text-sm text-cyan-400">#WebScraping</span>
+                    </div>
+                </div>
+
+                <!-- Python Applications -->
+                <div class="project-card gradient-border p-6">
+                    <h3 class="text-xl font-semibold mb-4">Chatbot</h3>
+                    <p class="text-gray-400 mb-4">Intelligent conversational agent using Python.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-sm text-cyan-400">#NLP</span>
+                        <span class="text-sm text-cyan-400">#AI</span>
+                    </div>
+                </div>
+
+                <div class="project-card gradient-border p-6">
+                    <h3 class="text-xl font-semibold mb-4">Security Tools</h3>
+                    <p class="text-gray-400 mb-4">Suite including Password Generator, OTP System, and Fake Logo Detection.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-sm text-cyan-400">#Security</span>
+                        <span class="text-sm text-cyan-400">#Python</span>
+                    </div>
+                </div>
+
+                <div class="project-card gradient-border p-6">
+                    <h3 class="text-xl font-semibold mb-4">Hangman Game</h3>
+                    <p class="text-gray-400 mb-4">Classic word game with modern GUI implementation.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-sm text-cyan-400">#Game</span>
+                        <span class="text-sm text-cyan-400">#GUI</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="py-20 bg-black/30">
+        <div class="container mx-auto px-4 relative">
+            <h2 class="text-4xl font-bold mb-12 text-center gradient-text animate-pulse">Certifications & Achievements</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Technical Certifications -->
+                <div class="gradient-border p-6 transform hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/20">
+                    <i class="fas fa-code text-4xl mb-4 gradient-text animate-pulse"></i>
+                    <h3 class="text-xl font-semibold mb-2">Programming & Development</h3>
+                    <ul class="text-gray-400 list-disc list-inside">
+                        <li>Frontend Technologies (IBM)</li>
+                        <li>Full Stack Web Development</li>
+                        <li>Problem Solving (Intermediate, HACKERRANK)</li>
+                        <li>Python (Basic, HACKERRANK)</li>
+                        <li>Software Engineer (HACKERRANK)</li>
+                    </ul>
+                </div>
+
+                <!-- Data Science & AI -->
+                <div class="gradient-border p-6 transform hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/20">
+                    <i class="fas fa-brain text-4xl mb-4 gradient-text animate-pulse"></i>
+                    <h3 class="text-xl font-semibold mb-2">Data Science & AI</h3>
+                    <ul class="text-gray-400 list-disc list-inside">
+                        <li>Data Visualization using Python and R</li>
+                        <li>AWS Deep Racer (KGiSL Institute)</li>
+                        <li>R-Programming (Chettinad College)</li>
+                        <li>AMD AI Challenge Workshop</li>
+                    </ul>
+                </div>
+
+                <!-- Hackathons & Competitions -->
+                <div class="gradient-border p-6 transform hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/20">
+                    <i class="fas fa-trophy text-4xl mb-4 gradient-text animate-pulse"></i>
+                    <h3 class="text-xl font-semibold mb-2">Hackathons & Competitions</h3>
+                    <ul class="text-gray-400 list-disc list-inside">
+                        <li>Smart India Hackathon 2024 Alumni</li>
+                        <li>Paper Presentation (Jansons College)</li>
+                    </ul>
+                </div>
+
+                <!-- Professional Development -->
+                <div class="gradient-border p-6 transform hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/20">
+                    <i class="fas fa-certificate text-4xl mb-4 gradient-text animate-pulse"></i>
+                    <h3 class="text-xl font-semibold mb-2">Professional Development</h3>
+                    <ul class="text-gray-400 list-disc list-inside">
+                        <li>Full Stack Web Development (MERN Stack) - On Going</li>
+                        <li>Professional Career Guidance (Skillhac)</li>
+                        <li>NM-AU-TNcpl Certificate (GUVI)</li>
+                        <li>Nextwave CCBP 4.0 Academy</li>
+                    </ul>
+                </div>
+
+                <!-- Academic Achievements -->
+                <div class="gradient-border p-6 transform hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/20">
+                    <i class="fas fa-award text-4xl mb-4 gradient-text animate-pulse"></i>
+                    <h3 class="text-xl font-semibold mb-2">Academic Achievements</h3>
+                    <ul class="text-gray-400 list-disc list-inside">
+                        <li>Paper Presentation 3rd Prize (Paavai Engineering)</li>
+                        <li>Project Presentation Participation (Paavai)</li>
+                        <li>AI Workshop (Paavai Engineering College)</li>
+                        <li>24hr Hackathon (KPR Engineering College)</li>
+                        <li>Paper & Project Presentations (KPR)</li>
+                    </ul>
+                </div>
+
+                <!-- Project Achievements -->
+                <div class="gradient-border p-6 transform hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/20">
+                    <i class="fas fa-project-diagram text-4xl mb-4 gradient-text animate-pulse"></i>
+                    <h3 class="text-xl font-semibold mb-2">Project Achievements</h3>
+                    <ul class="text-gray-400 list-disc list-inside">
+                        <li>CCET Bus Tracking System</li>
+                        <li>Dynamic Route Rationalization (SIH)</li>
+                        <li>Medical Patient Helper System</li>
+                        <li>AI Personal Assistant</li>
+                        <li>Stock Market Prediction</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-black/30">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold mb-12 text-center">Get in Touch</h2>
+            <div class="max-w-2xl mx-auto">
+    <form class="space-y-6" id="contact-form" onsubmit="handleSubmit(event)">
+                    <div>
+                        <input type="text" placeholder="Your Name" class="w-full p-3 bg-transparent gradient-border" required>
+                    </div>
+                    <div>
+                        <input type="email" placeholder="Your Email" class="w-full p-3 bg-transparent gradient-border" required>
+                    </div>
+                    <div>
+                        <textarea placeholder="Your Message" rows="5" class="w-full p-3 bg-transparent gradient-border" required></textarea>
+                    </div>
+                    <button type="submit" class="gradient-border px-8 py-3 w-full font-semibold hover:opacity-90 transition-opacity">
+                        Send Message
+                    </button>
+                </form>
+
+                <div class="mt-12 flex justify-center space-x-6">
+                    <a href="https://github.com/imranofficial1" target="_blank" rel="noopener noreferrer" class="text-2xl hover:text-cyan-400 transition-colors">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/k-mohammed-imran-83441733a/" target="_blank" rel="noopener noreferrer" class="text-2xl hover:text-cyan-400 transition-colors">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://wa.me/qr/L2H7NJOJ746XE1" target="_blank" rel="noopener noreferrer" class="text-2xl hover:text-cyan-400 transition-colors">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-6 border-t border-gray-800">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400">
+                    Built with ❤️ by Mohammed Imran © <span id="current-year"></span>
+                </p>
+                <div class="flex space-x-4 mt-4 md:mt-0">
+                    <a href="https://github.com/imranofficial1" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-cyan-400 transition-colors">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/k-mohammed-imran-83441733a/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-cyan-400 transition-colors">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://wa.me/qr/L2H7NJOJ746XE1" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-cyan-400 transition-colors">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JavaScript -->
+    <script>
+        // Google Translate initialization
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'en,hi,ta', // English, Hindi, Tamil
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+
+        // Typed.js initialization
+        document.addEventListener('DOMContentLoaded', function() {
+            new Typed('#typed-text', {
+                strings: [
+                    'AI & Data Science Developer',
+                    'Machine Learning Expert',
+                    'Full Stack Developer',
+                    'Deep Learning Engineer',
+                    'Python Developer',
+                    'Web Application Developer'
+                ],
+                typeSpeed: 50,
+                backSpeed: 30,
+                loop: true
+            });
+
+            // Enhanced ScrollReveal animations
+            const sr = ScrollReveal({
+                duration: 1000,
+                distance: '30px',
+                easing: 'cubic-bezier(0.5, 0, 0, 1)',
+                interval: 200,
+                reset: true,
+                mobile: true
+            });
+
+            // Reveal animations for different sections
+            sr.reveal('[data-scroll-reveal="projects-grid"]', {
+                origin: 'bottom',
+                distance: '50px',
+                duration: 1000,
+                interval: 200,
+                cleanup: true,
+                scale: 1,
+                opacity: 0,
+                delay: 200,
+                rotate: { x: 0, y: 0, z: 0 },
+                easing: 'cubic-bezier(0.4, 0, 0.2, 1)'
+            });
+
+            sr.reveal('.project-card', { 
+                origin: 'bottom',
+                distance: '50px',
+                duration: 1000,
+                interval: 200,
+                scale: 0.95,
+                opacity: 0,
+                cleanup: true
+            });
+
+            sr.reveal('.gradient-border', { 
+                origin: 'left',
+                distance: '30px',
+                duration: 800,
+                opacity: 0,
+                cleanup: true,
+                scale: 0.98
+            });
+
+            sr.reveal('h2', { 
+                origin: 'top',
+                distance: '20px',
+                duration: 600,
+                opacity: 0,
+                cleanup: true,
+                scale: 1.1
+            });
+
+            sr.reveal('p', { 
+                origin: 'right',
+                distance: '40px',
+                duration: 800,
+                opacity: 0,
+                cleanup: true
+            });
+
+            // Mobile Menu and Theme Toggle Setup
+            document.addEventListener('DOMContentLoaded', () => {
+                // Update current year
+                document.getElementById('current-year').textContent = new Date().getFullYear();
+
+                // Mobile menu setup
+                const mobileMenuButton = document.getElementById('mobile-menu-button');
+                const mobileMenu = document.getElementById('mobile-menu');
+
+                if (mobileMenuButton && mobileMenu) {
+                    // Mobile menu toggle with animation
+                    mobileMenuButton.addEventListener('click', () => {
+                        mobileMenu.classList.toggle('hidden');
+                        requestAnimationFrame(() => {
+                            mobileMenu.classList.toggle('show');
+                        });
+                        const icon = mobileMenuButton.querySelector('i');
+                        icon.classList.toggle('fa-bars');
+                        icon.classList.toggle('fa-times');
+                    });
+
+                    // Close mobile menu when clicking outside
+                    document.addEventListener('click', (e) => {
+                        if (!mobileMenu.contains(e.target) && !mobileMenuButton.contains(e.target) && !mobileMenu.classList.contains('hidden')) {
+                            mobileMenu.classList.add('hidden');
+                            mobileMenu.classList.remove('show');
+                            const icon = mobileMenuButton.querySelector('i');
+                            icon.classList.remove('fa-times');
+                            icon.classList.add('fa-bars');
+                        }
+                    });
+
+                    // Close mobile menu when clicking a link
+                    document.querySelectorAll('#mobile-menu a').forEach(link => {
+                        link.addEventListener('click', () => {
+                            mobileMenu.classList.add('hidden');
+                            mobileMenu.classList.remove('show');
+                            const icon = mobileMenuButton.querySelector('i');
+                            icon.classList.remove('fa-times');
+                            icon.classList.add('fa-bars');
+                        });
+                    });
+
+                    // Close mobile menu when window is resized to desktop size
+                    window.addEventListener('resize', () => {
+                        if (window.innerWidth >= 768 && !mobileMenu.classList.contains('hidden')) {
+                            mobileMenu.classList.add('hidden');
+                            mobileMenu.classList.remove('show');
+                            const icon = mobileMenuButton.querySelector('i');
+                            icon.classList.remove('fa-times');
+                            icon.classList.add('fa-bars');
+                        }
+                    });
+                }
+            });
+
+            // Theme toggle with enhanced functionality
+            const themeToggle = document.getElementById('theme-toggle');
+            const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+            
+            // Set initial theme based on system preference
+            if (prefersDarkScheme.matches) {
+                document.body.classList.add('dark-mode');
+                themeToggle.querySelector('i').classList.replace('fa-moon', 'fa-sun');
+            }
+
+            themeToggle.addEventListener('click', () => {
+                document.body.classList.toggle('dark-mode');
+                const icon = themeToggle.querySelector('i');
+                icon.classList.toggle('fa-moon');
+                icon.classList.toggle('fa-sun');
+
+                // Store theme preference
+                localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
+            });
+
+            // Apply stored theme preference
+            const storedTheme = localStorage.getItem('theme');
+            if (storedTheme) {
+                if (storedTheme === 'dark') {
+                    document.body.classList.add('dark-mode');
+                    themeToggle.querySelector('i').classList.replace('fa-moon', 'fa-sun');
+                } else {
+                    document.body.classList.remove('dark-mode');
+                    themeToggle.querySelector('i').classList.replace('fa-sun', 'fa-moon');
+                }
+            }
+
+            // Form handling
+            function handleSubmit(event) {
+                event.preventDefault();
+                const form = event.target;
+                const formData = new FormData(form);
+                
+                // You can add your form submission logic here
+                // For now, we'll just show a success message
+                alert('Thank you for your message! I will get back to you soon.');
+                form.reset();
+            }
+
+            // Add smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
